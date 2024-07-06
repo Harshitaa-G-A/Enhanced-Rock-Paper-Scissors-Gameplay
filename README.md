@@ -33,16 +33,15 @@ This project is developed using ReactJS for interactive user profiles, Spring Bo
 
 Connect to your database and then run your spring boot application.
 Now you can run the application by using "npm start"
-## Sample Output
-
+## Home Page
 ![Home Page](https://github.com/Harshitaa-G-A/Enhanced-Rock-Paper-Scissors-Gameplay/assets/146211436/772c1935-97b0-4fe9-aae0-bdc97139dd69.png)
-
+## Choose your avatar
 ![Choose your avatar](https://github.com/Harshitaa-G-A/Enhanced-Rock-Paper-Scissors-Gameplay/assets/146211436/9b6d596b-33e1-46c7-8b3b-be798eca9d97.png)
-
+## Play Mode
 ![Play Mode](https://github.com/Harshitaa-G-A/Enhanced-Rock-Paper-Scissors-Gameplay/assets/146211436/79cc3184-7fa3-4da7-a607-b3eaa7a98fbe.png)
-
+## Battle Mode
 ![Battle Mode](https://github.com/Harshitaa-G-A/Enhanced-Rock-Paper-Scissors-Gameplay/assets/146211436/a71f5558-0967-4693-a0cd-d783d872d1eb.png)
-
+## Game Statistics
 ![User game statistics](https://github.com/Harshitaa-G-A/Enhanced-Rock-Paper-Scissors-Gameplay/assets/146211436/e041612b-6766-438e-9363-5c6836c05489.png)
 
 
