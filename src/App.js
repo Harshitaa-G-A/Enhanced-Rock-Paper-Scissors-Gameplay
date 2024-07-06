@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './HomePage';
+import RockPaperScissorsGame from './RockPaperScissorsGame';
+import AvatarPage from './AvatarPage';
+import UserProfilePage from './UserProfilePage'; // Corrected the import statement
+import Battle from './Battle';
 
-function App() {
+const App = () => {
+  const [gamesRecord,setGamesRecord] = useState({played:0,won:0,gems:0});
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage getRecord={gamesRecord}/>} />
+      <Route path="/play" element={<RockPaperScissorsGame setGamesRecord={setGamesRecord} gamesRecord={gamesRecord}  />} />
+      <Route path="/avatar" element={<AvatarPage />} />
+      <Route path="/battle" element={<Battle setGamesRecord={setGamesRecord} gamesRecord={gamesRecord}  />} />
+      <Route path="/user-profile" element={<UserProfilePage  getRecord={gamesRecord}/>} /> {/* Corrected the component prop */}
+    </Routes>
   );
-}
+};
 
 export default App;

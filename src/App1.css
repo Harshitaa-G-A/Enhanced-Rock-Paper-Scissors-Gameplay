@@ -1,0 +1,73 @@
+.hands-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.choice-user,
+.choice-computer {
+  width: 30%;
+}
+.choicex {
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 225px;
+  
+}
+
+.level-box {
+  width: 40px; /* Adjust as needed */
+  height: 40px; /* Adjust as needed */
+  font-size: 14px; /* Adjust as needed */
+  line-height: 30px; /* Adjust as needed */
+}
+
+.choice-user img,
+.choice-computer img {
+  max-width: 100%;
+}
+.top-left {
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+
+.grid-container {
+  margin-bottom: 300px; /* Adjust the margin as needed */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px; /* Adjust the margin as needed */
+}
+
+.button-div {
+  position: absolute;
+  bottom: 100px; /* Adjust this value as needed */
+  left: 320px;
+  z-index: 1;  /* Adjust this value as needed */
+}
+
+.grid-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px; /* Adjust the margin as needed */
+}
+.buttonx-beacon {
+  animation: beacon 1.5s infinite;
+}
+@keyframes rotate1 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.rotate-dice {
+  animation: rotate1 0.5s linear infinite; /* Adjust the duration (2s) as needed */
+}
+
+
+
+
+/* Rest of your CSS styles */

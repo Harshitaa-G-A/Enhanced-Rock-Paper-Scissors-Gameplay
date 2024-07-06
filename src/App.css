@@ -1,38 +1,762 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.gameOverText {
+  color: #2EA9A5; /* Red color */
+  font-size: 24px; /* Adjust the font size as needed */
+  font-weight: bold; /* Optionally, make it bold */
+}
+.gemsCollectedText {
+  color: #5fa8d3; /* Green color */
+  font-size: 3px; /* Adjust the font size as needed */
+   /* Optionally, make it bold */
+}
 .App {
   text-align: center;
+  height: 100vh;
+  background-color: black;
+  font-family: sans-serif;
+  color: white;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 2rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes beaconEffect {
+  0% {
+    box-shadow: 0 0 10px 2px #2EA9A5;
+  }
+  50% {
+    box-shadow: 0 0 20px 6px #2EA9A5;
+  }
+  100% {
+    box-shadow: 0 0 10px 2px #2EA9A5;
   }
 }
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999; 
+  font-family: 'Press Start 2P';
+  overflow: hidden;/* Adjust z-index to ensure it's on top of other elements */
+}
+.modal1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999; 
+  font-family: 'Press Start 2P';
+  overflow: hidden;/* Adjust z-index to ensure it's on top of other elements */
+}
+.user-profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px; /* Add margin for spacing */
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.user-profile-heading {
+  margin: 0;
+  background-color: #000;
+  font-family: 'Monoton'; /* Remove default margin for h1 */
+}
+.user-profile-container {
+  position: relative;
+}
+
+.level-info {
+  position: absolute;
+  top: 90px; /* Adjust the top position as needed */
+  right: 10px; 
+  width:150px;/* Adjust the right position as needed */
+}
+
+.userprof{
+  height: 10vh;
+  border: 2px solid #FF1493; 
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width:250px;
+}
+.user2prof{
+  height: 8vh;
+  border: 2px solid #FF1493; 
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width:100px;
+}
+.progress-container {
+  width: 100%;
+  background-color: #000;
+  border-radius: 10px;
+  margin-top: 80px;
+  overflow: hidden;
+  
+}
+
+.progress-bar {
+  height: 20px;
+  width: 0;
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out;
+}
+
+.progress-label {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+}
+.user-profile-heading {
+  height: 10vh;
+  display: flex;
+  width:210vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;/* Neon color */
+  margin-top: 20px; /* Adjust the margin-top to move it down */
+  border: 2px solid #00ffcc; /* Neon color for the border */
+  padding: 10px; /* Add padding for spacing inside the box */
+  border-radius: 10px; /* Adjust the border-radius for rounded corners */
+}
+.user-profile-content {
+  display: flex;
+}
+
+.info-box {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: black;
+  color: #fff;
+  padding: 10px; /* Adjust padding for spacing */
+  border: 2px solid #00ffcc;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-family: 'Monoton';
+}
+
+.info-label {
+  margin:0;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.info-value {
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+/* Add this to your CSS file */
+.level-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.level-row {
+  display: flex;
+}
+
+.level-box {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  margin: 4px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.active {
+  background-color: #FF1493; /* Your active color */
+}
+
+.content {
+  background-color: black; 
+  border: 3px solid #099FFF;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 50%;
+  
+  max-width: 900px;
+  max-height: 250vh;
+  overflow: hidden;
+  font-family: 'Press Start 2P'; /* Add scroll if content exceeds max-height */
+}
+.content p{
+  font-family: 'Press Start 2P';
+  font-size:2rem;
+}
+.content1 {
+  background-color: black; 
+  border: 3px solid #099FFF;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 50%;
+  
+  max-width: 900px;
+  max-height: 250vh;
+  overflow: hidden;
+  font-family: 'Press Start 2P'; /* Add scroll if content exceeds max-height */
+}
+.content1 p{
+  font-family: 'Press Start 2P';
+  font-size:2rem;
+}
+a {
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 1;
+  text-decoration: none;
+  color: #fff;
+  font-family: Monoton;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #2EA9A5, 0 0 20px #2EA9A5, 0 0 30px #2EA9A5, 0 0 40px #228dff,
+      0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
+  }
+  to {
+    text-shadow: 0 0 5px #2EA9A5, 0 0 10px #2EA9A5, 0 0 15px #2EA9A5, 0 0 20px #228dff,
+      0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
+  }
+}
+.small-avatar {
+  width: 150px;
+  height: 150px;
+
+}
+
+.content p {
+  margin: 10px 0;
+}
+
+/* Add this class to apply beacon effect */
+.beacon {
+  animation: beaconEffect 2s ease-in-out;
+}
+.beaconEffect {
+  animation: beacon 1.5s infinite;
+}
+.button2 {
+  width: 150px;
+  height: 40px;
+  font-size: 1.2rem;
+  background-color: black; 
+  border: 2px solid #2EA9A5;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button {
+  width: 80px;
+  height: 80px;
+  font-size: 1.2rem;
+  background-color: #2EA9A5; 
+  margin: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.score {
+  height: 20vh;
+  display: flex;
+  font-family: Monoton;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0 150px;
+  color: white;
+}
+.score p{
+  font-size: 1.5rem;
+  
+  font-family: 'Monoton';
+  color: white;
+  height:40px;
+  width:40vh;
+}
+/* Add these styles to your existing CSS file */
+
+.neon-ball {
+  width: 40px;
+  height: 40px;
+   /* Neon color */
+  border-radius: 50%;
+  background-color: black;
+  border: 5px solid #5fa8d3;
+  margin: 0 5px;
+}
+
+.balls-collected {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+
+}
+
+/* Add these styles to your CSS file */
+.top-left-username {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 36px; /* Adjust the font size as needed */
+  color: #fff;
+  /* Text color */
+}
+.bottom-left {
+  position: fixed;
+  bottom: 60px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.bottom-left-up {
+  position: fixed;
+  top: 50px;
+  left: 2px;
+  display: flex;
+  width:150px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.bottom-left2 {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.login-button.bottom-left {
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+.login-button.bottom-left2 {
+  width:104px;/* Adjust the margin as needed */
+}
+.user-info {
+  --interval: 1s;
+  display: block;
+  text-shadow: 
+    0 0 10px var(--color1),
+    0 0 20px var(--color2),
+    0 0 40px var(--color3),
+    0 0 80px var(--color4);
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 1s infinite;
+  font-size: 15px; /* Set your desired font size */
+  margin: 0; /* Remove default margin */
+  padding: 5px; /* Add padding for spacing if needed */
+  border: none; /* Remove borders */
+  /* Set font weight if desired */
+  font-family: 'Monoton';
+  color: var(--color1); /* Change the default color */
+--color1: #FF1493; /* Darker Pink */
+--color2: #C71585; /* Even Darker Pink */
+--color3: #DB7093; /* Dark Pink */
+--color4: #D87093;/* Set text color */
+  /* Add any additional styling as needed */
+}
+.user2-info {
+  --interval: 1s;
+  display: block;
+  text-shadow: 
+    0 0 10px var(--color1),
+    0 0 20px var(--color2),
+    0 0 40px var(--color3),
+    0 0 80px var(--color4);
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 1s infinite;
+  font-size: 40px; /* Set your desired font size */
+  margin: 0; /* Remove default margin */
+  padding: 5px; /* Add padding for spacing if needed */
+  border: none; /* Remove borders */
+  /* Set font weight if desired */
+  font-family: 'Monoton';
+  color: var(--color1); /* Change the default color */
+--color1: #FF1493; /* Darker Pink */
+--color2: #C71585; /* Even Darker Pink */
+--color3: #DB7093; /* Dark Pink */
+--color4: #D87093;/* Set text color */
+  /* Add any additional styling as needed */
+}
+
+.balls-collected.user-info {
+  
+  border:none;
+  bottom:200px;
+  left:-5px;
+  
+}
+
+.top-left-username p{
+  font-size: 1.5rem;
+  color: white;
+  font-family: 'Monoton';
+  background-color: black;
+  border: 2px solid #00ffcc; 
+  border-radius: 10px;
+  padding: 6px 20px;
+  width: 180px;
+  height: 40px;
+}
+.login-popup {
+  background-color: black;
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0;
+}
+.signin-button {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.login-label {
+  display: block;
+  margin-bottom: 10px; /* Adjust the margin to move the labels down */
+  color: white;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+  font-family: 'Monoton';
+  font-size: 1.3rem;
+}
+.logintitle{
+  margin-Bottom: 15px;
+  background-color: black;
+  border: 2px solid #00ffcc;
+  padding: 16px 20px;
+}
+.login-input {
+  margin-left: 10px;
+  color: #000; /* Adjust the text color as needed */
+  border: none; /* Remove border */
+}
+
+
+.balls-collected p{
+  font-size: 1.5rem;
+  color: white;
+  font-family: 'Monoton';
+  background-color: black;
+  border: 2px solid #00ffcc; 
+  border-radius: 10px;
+  padding: 6px 20px;
+  width: 120px;
+  height: 38px;
+}
+.neon-ball.user {
+  animation: userBallFall 2s ease-in-out;
+}
+
+.neon-ball.computer {
+  animation: computerBallFall 2s ease-in-out;
+}
+
+@keyframes userBallFall {
+  0% {
+    transform: translate(0, -100vh);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes computerBallFall {
+  0% {
+    transform: translate(100vh, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Existing styles... */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh; /* Change from height to min-height */
+  background-color: black;
+  font-family: sans-serif;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ... other existing styles ... */
+
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.result {
+  height: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  border: none;
+}
+
+.fadeOutDown {
+  animation: fadeOutDown 1s ease-in-out;
+}
+
+
+
+
+
+.play-again {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.round {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.choice {
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  margin-top: -25px;
+  
+}
+.choice2 {
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  margin-top: -5px;
+  
+}
+.choice3 {
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  margin-top: -5px;
+  
+}
+.choice-images {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@keyframes rotate {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25%, 75% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+.rotate {
+  animation: rotate 1s ease-in-out infinite; /* Infinite iterations */
+}
+.computer-hand {
+  width: 250px;
+}
+.user-hand {
+  width: 250px;
+  transform: rotateY(180deg);
+}
+
+button:hover {
+  animation: effect 0.4s infinite;
+}
+
+@keyframes effect {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+  }
+
+  20% {
+    transform: translateX(-4px) rotate(-4deg);
+  }
+
+  40% {
+    transform: translateX(-2px) rotate(-2deg);
+  }
+
+  60% {
+    transform: translateX(4px) rotate(4deg);
+  }
+
+  80% {
+    transform: translateX(2px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+@keyframes beacon {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+.button-beacon {
+  animation: beacon 1.5s infinite;
+}
+
+
+.button-beacon {
+  background-color: black;
+  color: #fff; /* Text color */
+  border: 2px solid #00ff00; /* Neon color */
+  padding: 10px 20px;
+  border-radius: 50%; /* Adjust as needed */
+  cursor: pointer;
+}
+
+.button2-beacon {
+  animation: beacon 1.5s infinite;
+}
+
+
+.button2-beacon {
+  background-color: black;
+  color: #fff; /* Text color */
+  border: 2px solid #2EA9A5; /* Neon color */
+  padding: 10px 20px;
+  border-radius: 50%; /* Adjust as needed */
+  cursor: pointer;
+}
+.choice button {
+  width: 80px;
+  height: 80px;
+  font-size: 1.2rem;
+  background-color: black; /* Change the background color to black */
+  color: #fff; /* Change the text color to white */
+  border: 2px solid #5fa8d3; /* Neon color for the border */
+  margin: 10px;
+  border-radius: 50%; /* Ensure a circular shape */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -15px;
+}
+.choice3 button {
+  width: 100px;
+  height: 60px;
+  font-size: 1.2rem;
+  background-color: black; /* Change the background color to black */
+  color: #fff; /* Change the text color to white */
+  border: 2px solid #5fa8d3; /* Neon color for the border */
+  margin: 10px;
+  border-radius: 10px; /* Ensure a circular shape */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -15px;
+}
+.round {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 20px; /* Adjust the margin-top to move it down */
+  border: 2px solid #5fa8d3; /* Neon color for the border */
+  padding: 10px; /* Add padding for spacing inside the box */
+  border-radius: 10px; /* Adjust the border-radius for rounded corners */
+}
+.choice button:hover {
+  animation: effect 0.4s infinite;
+}
+
+@keyframes effect {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+  }
+
+  20% {
+    transform: translateX(-4px) rotate(-4deg);
+  }
+
+  40% {
+    transform: translateX(-2px) rotate(-2deg);
+  }
+
+  60% {
+    transform: translateX(4px) rotate(4deg);
+  }
+
+  80% {
+    transform: translateX(2px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateX(0px) rotate(0deg);
   }
 }
