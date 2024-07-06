@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Enhanced Rock Paper Scissors Gameplay
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is developed using ReactJS for interactive user profiles, Spring Boot for robust backend support, and MongoDB for scalable data storage. It includes features designed to enhance the gameplay experience of Rock Paper Scissors, integrating detailed game statistics and a competitive battle mode with board games.
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+- **Frontend:** ReactJS
+- **Backend:** Spring Boot
+- **Database:** MongoDB
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Interactive User Profiles:** Engage users with personalized profiles and interactions.
+- **Detailed Game Stats:** Track and display comprehensive statistics of gameplay sessions.
+- **Competitive Battle Mode:** Challenge other players in a competitive gaming environment.
+- **Integration with Board Games:** Enhance gameplay experience by integrating with various board games.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Setting Up Spring Boot Backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Create a Spring Boot Project:**
 
-### `npm run build`
+   Follow the instructions [here](https://www.geeksforgeeks.org/how-to-create-and-setup-spring-boot-project-in-eclipse-ide/) to create and set up your Spring Boot project in your preferred IDE.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Configure MongoDB Connection:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   Add the MongoDB connection URI and database name in the `application.properties` file of your Spring Boot application:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```properties
+   spring.data.mongodb.uri=//put your connection string here
+   spring.data.mongodb.database=rockpaperscissors
 
-### `npm run eject`
+Connect to your database and then run your spring boot application.
+Now you can run the application by using "npm start"
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
